@@ -39,6 +39,13 @@ Yes, in testing on synthetic data from multiple simulators, we find RapMap to be
 
 RapMap is experimental, and the code, at this point, is subject to me testing out new ideas. This also means that little effort has been put into size or speed optimizaiton (but it's already *very* fast --- see above).  There are numerous ways that the code can be sped up and the memory footprint reduced, but that hasn't been the focus yet --- it will be eventualy.  All of this being said --- RapMap is open to the community because I'd like feedback / help / thoughts.  So, if you're not scared off by any of the above, *dig in*!
 
+#Rap Map using CSA
+
+The implementation is intended to make RapMap use less memory. Though the less memory requirement comes at the cost of using more time.
+It is dependent on sdsl-lite the implementation and install instructions of which can be found at https://github.com/simongog/sdsl-lite.
+Once sdsl-lite is install, the CSA implementation file, RapMapCSA.cpp can be compiled and used using the command:
+g++ -std=c++11 -O3 -DNDEBUG -I ~/include -L ~/lib RapMapCSA.cpp -o <object-file-name> -lsdsl -ldivsufsort -ldivsufsort64
+
 # External dependencies
 
 [tclap](http://tclap.sourceforge.net/)
